@@ -29,18 +29,26 @@ catch (Exception $e) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Eagri</a>
+            <strong><a style="color:black;" class="navbar-brand" href="#">Carnet 47</a></strong>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="./dashboard.php">Mes Parcelles</a></li>
-                <li><a href="#">Mon Cheptel</a></li>
-                <li><a href="#">Mes Experiences</a></li>
-                <li><a href="#">Mes Stocks</a></li>
+                <li style="background-color:#74DF00;"><a style="color:#FFFFFF;" href="./dashboard.php">Parcelles</a></li>
+                <li><a style="color:black;"href="#">Cheptel</a></li>
+                <li><a style="color:black;" href="./myexp.php">Experiences</a></li>
+                <li><a style="color:black;" href="#">Materiel</a></li>
+                <li><a style="color:black;" href="#">Partenaires</a></li>
+                <li><a style="color:black;"href="#">Stocks</a></li>
             </ul>
+<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Rechercher une experience...">
+        </div>
+        <button type="submit" class="btn btn-default">GO</button>
+      </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Profil de <?php echo $_SESSION['login'];?>
+                    <a style="background-color:black;color:#FFFFFF;" class="dropdown-toggle" data-toggle="dropdown" href="#"> Profil de <?php echo $_SESSION['login'];?>
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="./function/user_disconnect.php"> Se deconnecter</a></li>
@@ -56,16 +64,17 @@ catch (Exception $e) {
 
 <div class="col-md-12">
     <div class="col-md-7">
-        <img src="../img/arton51844.jpg" style="width: 102.8%; height: 600px;" />
+        <img src="../img/Parcelle4.png" style="width: 102.8%; height: 600px;" />
     </div>
 
     <div class="col-md-5">
         <div class="border" id="scrollWindow">
             <div class="titreParcelle">
                 Expérience en cours: <strong><?php echo $_GET['experience']; ?></strong>
+						<form id="pushit" class="form-inline" role="form" method="POST" action="./function/user_publish.php?parcelle=<?php echo $_GET['parcelle'];?>&experience=<?php echo $_GET['experience'];?>">
+							<button type="submit" class="btn btn-default">Publier</button>
+            </form>
             </div>
-
-
             <div class="col-md-12" id="ccc">
 
                 <div class="col-md-7 col-md-offset-1">
@@ -131,9 +140,13 @@ catch (Exception $e) {
                         echo "<div class='dde'><img class='icotask' src='../img/alerte.png'>". "<h3>" . $show['name']."</h3></p>".$show['date']."</p><br><strong><p>".$show['resume'] . "</p></strong></div>";
 											}
 
-											else if ($show['name'] == "Observation" || $show['name'] == "Semis" || $show['name'] == "Autre")
+											else if ($show['name'] == "Observation")
 											{
                         echo "<div id='dd'><img class='icotask' src='../img/observation.png'><h3>" . $show['name']."</h3></p>".$show['date']."</p><br><strong><p>".$show['resume'] . "</p></strong><img class='dou' src='../img/turricules.jpg'/></div>";
+											}
+											else if ($show['name'] == "Semis" || $show['name'] == "Autre")
+											{
+                        echo "<div id='dd'><h3>" . $show['name']."</h3></p>".$show['date']."</p><br><strong><p>".$show['resume'] . "</p></strong></div>";
 											}
                     }
                     ?>

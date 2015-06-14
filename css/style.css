@@ -5,15 +5,17 @@
 
 .connectdiv
 {
-	background-color:lightgreen;
+	background-color:#74DF00;
     margin-top:100px;
-	height:300px;
-    padding-top:25px
+	height:350px;
+    padding-top:25px;
+	border:solid #000000 1px;
+	
 }
 
 .titreParcelle {
     border-bottom: 1px black solid;
-    background-color: yellowgreen;
+    background-color: #74DF00;
     height: 80px;
     width: 100%;
     font-size: 22px;
@@ -72,7 +74,7 @@
     margin: 1%;
     padding: 2%;
     border: 1px black solid;
-		background-color:lightgreen;
+		background-color:#74DF00;
 }
 
 #ttt {
@@ -139,4 +141,34 @@
 {
 	width:100%;
 	height:50px;
+}
+
+#pushit
+{
+	position:absolute;
+	display:inline-block;
+	margin-left:10px;
+}
+
+.publexp
+{
+	height:75px;
+	width:100%;
+	background-color:#74DF00;
+	padding-top:5px;
+	padding-left:10px;
+	color:#FFFFFF;
+	border:solid #000000 1px;
+	cursor:pointer;
+}
+
+.navbar-inverse
+{
+	background-color:#FFFFFF;
+	border:none;
+}
+
+.morede
+{
+	display:none;
 }

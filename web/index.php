@@ -20,7 +20,8 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 		?>
-		<div class="connectdiv col-md-6 col-md-offset-3">
+		<div class="connectdiv col-md-4 col-md-offset-4">
+			<h1><strong>Carnet 47</strong></h1>
 			<form role="form" method="POST" action="./function/user_connect.php">
 				<div class="form-group">
 					<label for="mail">Adresse E-Mail :</label>

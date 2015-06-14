@@ -29,18 +29,26 @@ catch (Exception $e) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Eagri</a>
+            <strong><a style="color:black;" class="navbar-brand" href="#">Carnet 47</a></strong>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="./dashboard.php">Mes Parcelles</a></li>
-                <li><a href="#">Mon Cheptel</a></li>
-                <li><a href="#">Mes Experiences</a></li>
-                <li><a href="#">Mes Stocks</a></li>
+                <li style="background-color:#74DF00;"><a style="color:#FFFFFF;" href="./dashboard.php">Parcelles</a></li>
+                <li><a style="color:black;"href="#">Cheptel</a></li>
+                <li><a style="color:black;" href="./myexp.php">Experiences</a></li>
+                <li><a style="color:black;" href="#">Materiel</a></li>
+                <li><a style="color:black;" href="#">Partenaires</a></li>
+                <li><a style="color:black;"href="#">Stocks</a></li>
             </ul>
+<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Rechercher une experience...">
+        </div>
+        <button type="submit" class="btn btn-default">GO</button>
+      </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Profil de <?php echo $_SESSION['login'];?>
+                    <a style="background-color:black;color:#FFFFFF;" class="dropdown-toggle" data-toggle="dropdown" href="#"> Profil de <?php echo $_SESSION['login'];?>
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="./function/user_disconnect.php"> Se deconnecter</a></li>

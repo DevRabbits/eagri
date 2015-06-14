@@ -33,9 +33,9 @@ catch (Exception $e) {
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li style="background-color:#74DF00;"><a style="color:#FFFFFF;" href="./dashboard.php">Parcelles</a></li>
+                <li><a style="color:#000000;" href="./dashboard.php">Parcelles</a></li>
                 <li><a style="color:black;"href="#">Cheptel</a></li>
-                <li><a style="color:black;" href="./myexp.php">Experiences</a></li>
+                <li style="background-color:#74DF00;"><a style="color:#FFFFFF;" href="./myexp.php">Experiences</a></li>
                 <li><a style="color:black;" href="#">Materiel</a></li>
                 <li><a style="color:black;" href="#">Partenaires</a></li>
                 <li><a style="color:black;"href="#">Stocks</a></li>
@@ -58,66 +58,63 @@ catch (Exception $e) {
         </div>
     </div>
 </nav>
-<h3 id="parce"><a href="./dashboard.php"><?php echo $_SESSION['login']; ?></a> > <?php echo $_GET['parcelle'];?></h3>
 <br>
+<div class="col-md-10 col-md-offset-1"><h2><strong><?php echo $_SESSION['login']; ?> > Mes Experiences</strong></h2></div>
+<br></br>
+<br></br>
+<div class="grey col-md-10 col-md-offset-1"></div>
 
-<div class="col-md-12">
-    <div class="col-md-7">
-        <img src="../img/Parcelle4.png" style="width: 102.8%; height: 600px" />
+
+<!--
+<div class="col-md-6 col-md-offset-3" id="ttt">
+
+    <div class="col-md-3 col-md-offset-4">
+        <br>
+        <br>
+        <div class="ee"><h4><strong>Ajouter une Parcelle</strong></h4></div>
+
+        <form id="addParcelle" style="margin:auto;text-align:center;" class="form-inline" role="form" method="POST" action="./function/user_addparcelle.php">
+            <div class="form-group">
+                <label for="name">Nom Parcelle :</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <button type="submit" class="btn btn-default">Ajouter</button>
+        </form>
+        <br></br>
     </div>
 
-    <div class="col-md-5">
-        <div class="border" id="scrollWindow">
-            <div class="titreParcelle">
-                Parcelle en cours: <strong><?php echo $_GET['parcelle']; ?></strong>
+    <div class="col-md-4">
+        <div class="ee">
+        <br>
+        <br>
+        <a href="#"><img id="imageParcelle" src="../img/+.png" /></a>
+        <br>
+        <br>
+        <br>
             </div>
-
-
-            <div class="col-md-12" id="aaa">
-
-                <div class="col-md-6 col-md-offset-1">
-                    <br>
-                    <br>
-                    <h4><strong>Ajouter une Experience</strong></h4>
-                </div>
-
-                <div class="col-md-4">
-                    <br>
-                    <br>
-                    <a href="#"><img id="image" src="../img/+.png" /></a>
-                    <br>
-                    <br>
-                    <br>
-                </div>
-
-            </div>
-
-
-            <div class="from">
-                <form id="addExperience" style="margin:auto;text-align:center;" class="form-inline" role="form" method="POST" action="./function/user_addexperience.php?parcelle=<?php echo $_GET['parcelle']?>">
-                    <div class="form-group">
-                        <br>
-                        <br>
-                        <label for="name">Nom de l'Expérience: </label>
-                        <input type="text" class="form-control" id="name" name="name">
-                        <input type="submit" value="Ajouter" />
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-12" id="aaa">
-                <div id="gg">
-                    <?php
-                    $parcelle = $_GET['parcelle'];
-                    $request = $bdd->query("SELECT * FROM experience WHERE parcelle ='".$parcelle."'");
-                    foreach ($request as $show)
-                    {
-                        echo "<form method='POST' action='./user_experience.php?parcelle=".$parcelle."&experience=".$show['name']."'><button type='submit' class='expgo' name=".$show['name']." class='btn btn-default'>".$show['name']."</button></form>";
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
     </div>
+<div class="col-md-3"></div>
+</div>
+-->
+
+<div class="col-md-10 col-md-offset-1">
+    <br>
+    <?php
+    $owner = $_SESSION['login'];
+    $request = $bdd->query("SELECT * FROM experience WHERE publish ='1'");
+    foreach ($request as $show)
+    {
+			if ($show['name'] == "Colza associe")
+			{
+        echo "<div class='publexp deroulant'><h3><strong>".$show['parcelle'] ." : ".$show['name']."</strong></h3></div>";
+				echo "<div class='morede'><img src='../img/demo.jpg'></div>";
+			}
+			else
+        echo "<div class='publexp'><h3><strong>".$show['parcelle'] ." : ".$show['name']."</strong></h3></div>";
+    }
+    ?>
+    <br>
+    <br>
 </div>
 </body>
 </html>
