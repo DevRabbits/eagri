@@ -50,23 +50,53 @@ catch (Exception $e) {
         </div>
     </div>
 </nav>
-<form style="margin:auto;text-align:center;" class="form-inline" role="form" method="POST" action="./function/user_addparcelle.php">
-    <div class="form-group">
-        <label for="name">Nouvelle Parcelle :</label>
-        <input type="text" class="form-control" id="name" name="name">
+<br>
+<div class="col-md-12"><h2>Bonjour, <strong><?php echo $_SESSION['login']; ?></strong></h2></div>
+
+
+
+<div class="col-md-6 col-md-offset-3" id="ttt">
+
+    <div class="col-md-3 col-md-offset-4">
+        <br>
+        <br>
+        <div class="ee"><h4><strong>Ajouter une Parcelle</strong></h4></div>
+
+        <form id="addParcelle" style="margin:auto;text-align:center;" class="form-inline" role="form" method="POST" action="./function/user_addparcelle.php">
+            <div class="form-group">
+                <label for="name">Nom Parcelle :</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <button type="submit" class="btn btn-default">Ajouter</button>
+        </form>
+        <br></br>
     </div>
-    <button type="submit" class="btn btn-default">Ajouter</button>
-</form>
-<br></br>
+
+    <div class="col-md-4">
+        <div class="ee">
+        <br>
+        <br>
+        <a href="#"><img id="imageParcelle" src="../img/+.png" /></a>
+        <br>
+        <br>
+        <br>
+            </div>
+    </div>
+<div class="col-md-3"></div>
+</div>
+
 <div class="col-md-10 col-md-offset-1">
+    <br>
     <?php
     $owner = $_SESSION['login'];
     $request = $bdd->query("SELECT * FROM parcelle WHERE owner ='".$owner."'");
     foreach ($request as $show)
     {
-        echo "<form method='POST' action='./user_parcelle.php?parcelle=".$show['name']."'><button type='submit' class='btn btn-default'>".$show['name']."</button></form>";
+        echo "<form method='POST' action='./user_parcelle.php?parcelle=".$show['name']."'><button type='submit' id='jjj' class='btn btn-default'>".$show['name']."</button></form>";
     }
     ?>
+    <br>
+    <br>
 </div>
 
 <div class="col-md-10 col-md-offset-1">
@@ -75,8 +105,8 @@ catch (Exception $e) {
 
     $api_key = 'e779d40307caf2f42aa37625a35e9db9';
 
-    $latitude = '52.4308';
-    $longitude = '13.2588';
+    $latitude = '48.471';
+    $longitude = '0.996399';
     $units = 'auto';  // Can be set to 'us', 'si', 'ca', 'uk' or 'auto' (see forecast.io API); default is auto
     $lang = 'fr'; // Can be set to 'en', 'de', 'pl', 'es', 'fr', 'it', 'tet' or 'x-pig-latin' (see forecast.io API); default is 'en'
 

@@ -33,7 +33,7 @@ catch (Exception $e) {
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Mes Parcelles</a></li>
+                <li class="active"><a href="./dashboard.php">Mes Parcelles</a></li>
                 <li><a href="#">Mon Cheptel</a></li>
                 <li><a href="#">Mes Experiences</a></li>
                 <li><a href="#">Mes Stocks</a></li>
@@ -50,7 +50,7 @@ catch (Exception $e) {
         </div>
     </div>
 </nav>
-<h3 id="parce"><a href="./user_parcelle.php?parcelle=<?php echo $_GET['parcelle'];?>"><?php echo $_GET['parcelle'] . "</a> > " . $_GET['experience'];?></h3>
+<h3 id="parce"><?php echo $_SESSION['login']; ?> > <a href="./user_parcelle.php?parcelle=<?php echo $_GET['parcelle'];?>"><?php echo $_GET['parcelle'] . "</a> > " . $_GET['experience'];?></h3>
 
 <br>
 

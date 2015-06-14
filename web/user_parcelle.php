@@ -51,7 +51,7 @@ catch (Exception $e) {
     </div>
 </nav>
 
-<h3 id="parce"><?php echo $_GET['parcelle'];?></h3>
+<h3 id="parce"><?php echo $_SESSION['login']; ?> > <?php echo $_GET['parcelle'];?></h3>
 <br>
 
 <div class="col-md-12">
