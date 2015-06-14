@@ -33,7 +33,7 @@ catch (Exception $e) {
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Mes Parcelles</a></li>
+                <li class="active"><a href="./dashboard.php">Mes Parcelles</a></li>
                 <li><a href="#">Mon Cheptel</a></li>
                 <li><a href="#">Mes Experiences</a></li>
                 <li><a href="#">Mes Stocks</a></li>
