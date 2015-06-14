@@ -68,13 +68,13 @@ catch (Exception $e) {
 
             <div class="col-md-12" id="ccc">
 
-                <div class="col-md-6">
+                <div class="col-md-7 col-md-offset-1">
                     <br>
                     <br>
                     <h4><strong>Ajouter une Tâche</strong></h4>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <br>
                     <br>
                     <a href="#"><img id="imageTask" src="../img/+.png" /></a>

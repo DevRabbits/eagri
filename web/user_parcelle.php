@@ -68,13 +68,13 @@ catch (Exception $e) {
 
             <div class="col-md-12" id="aaa">
 
-                <div class="col-md-6">
+                <div class="col-md-6 col-md-offset-1">
                     <br>
                     <br>
                     <h4><strong>Ajouter une Experience</strong></h4>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <br>
                     <br>
                     <a href="#"><img id="image" src="../img/+.png" /></a>
@@ -112,6 +112,7 @@ catch (Exception $e) {
         </div>
     </div>
 </div>
+
 
 </body>
 </html>
