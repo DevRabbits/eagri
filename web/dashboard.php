@@ -51,10 +51,14 @@ catch (Exception $e) {
     </div>
 </nav>
 <br>
-<div class="col-md-12"><h2>Bonjour, <strong><?php echo $_SESSION['login']; ?></strong></h2></div>
+<div class="col-md-10 col-md-offset-1"><h2>Exploitation <strong><?php echo $_SESSION['login']; ?></strong></h2></div>
+<br></br>
+<br></br>
+<div class="grey col-md-10 col-md-offset-1"></div>
+<a href="./user_parcelle.php?parcelle=Parcelle2"><img class="cadastre col-md-10 col-md-offset-1" src="../img/Cadastre.png"></a>
 
 
-
+<!--
 <div class="col-md-6 col-md-offset-3" id="ttt">
 
     <div class="col-md-3 col-md-offset-4">
@@ -84,13 +88,14 @@ catch (Exception $e) {
     </div>
 <div class="col-md-3"></div>
 </div>
+-->
 
 <div class="col-md-10 col-md-offset-1 showparce">
     <br>
     <?php
     $owner = $_SESSION['login'];
     $request = $bdd->query("SELECT * FROM parcelle WHERE owner ='".$owner."'");
-    foreach ($request as $show)
+    //foreach ($request as $show)
     {
         echo "<form method='POST' action='./user_parcelle.php?parcelle=".$show['name']."'><button type='submit' id='jjj' class='btn btn-default'>".$show['name']."</button></form>";
     }
@@ -98,66 +103,5 @@ catch (Exception $e) {
     <br>
     <br>
 </div>
-
-<div class="col-md-6 col-md-offset-3 showtemp">
-    <?php
-    include('../lib/forecast.io.php');
-
-    $api_key = 'e779d40307caf2f42aa37625a35e9db9';
-
-    $latitude = '48.471';
-    $longitude = '0.996399';
-    $units = 'auto';  // Can be set to 'us', 'si', 'ca', 'uk' or 'auto' (see forecast.io API); default is auto
-    $lang = 'fr'; // Can be set to 'en', 'de', 'pl', 'es', 'fr', 'it', 'tet' or 'x-pig-latin' (see forecast.io API); default is 'en'
-
-    $forecast = new ForecastIO($api_key, $units, $lang);
-
-    // all default will be
-    // $forecast = new ForecastIO($api_key);
-
-
-    /*
-     * GET CURRENT CONDITIONS
-     */
-    $condition = $forecast->getCurrentConditions($latitude, $longitude);
-    echo '<pre>';
-    echo 'Current temperature: '.$condition->getTemperature(). "\n";
-
-
-    /*
-     * GET HOURLY CONDITIONS FOR TODAY
-     */
-    $conditions_today = $forecast->getForecastToday($latitude, $longitude);
-
-    echo "\n\nTodays temperature:\n";
-
-    foreach($conditions_today as $cond) {
-
-        echo $cond->getTime('H:i:s') . ': ' . $cond->getTemperature(). "\n";
-
-    }
-
-    /*
-     * GET DAILY CONDITIONS FOR NEXT 7 DAYS
-     */
-    $conditions_week = $forecast->getForecastWeek($latitude, $longitude);
-
-    echo "\n\nConditions this week:\n";
-
-    foreach($conditions_week as $conditions) {
-
-        echo $conditions->getTime('Y-m-d') . ': ' . $conditions->getMaxTemperature() . "\n";
-
-    }
-
-    /*
-     * GET HISTORICAL CONDITIONS
-     */
-    $condition = $forecast->getHistoricalConditions($latitude, $longitude, '2010-10-10T14:00:00-0700');
-
-    echo "\n\nTemperatur 2010-10-10: ". $condition->getMaxTemperature(). "\n";
-    ?>
-</div>
-<div class="footer col-md-12"></div>
 </body>
 </html>

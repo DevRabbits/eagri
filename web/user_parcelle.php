@@ -51,12 +51,12 @@ catch (Exception $e) {
     </div>
 </nav>
 
-<h3 id="parce"><?php echo $_SESSION['login']; ?> > <?php echo $_GET['parcelle'];?></h3>
+<h3 id="parce"><a href="./dashboard.php"><?php echo $_SESSION['login']; ?></a> > <?php echo $_GET['parcelle'];?></h3>
 <br>
 
 <div class="col-md-12">
     <div class="col-md-7">
-        <img src="../img/arton51844.jpg" style="width: 102.8%; height: 100%" />
+        <img src="../img/arton51844.jpg" style="width: 102.8%; height: 600px" />
     </div>
 
     <div class="col-md-5">
@@ -104,7 +104,7 @@ catch (Exception $e) {
                     $request = $bdd->query("SELECT * FROM experience WHERE parcelle ='".$parcelle."'");
                     foreach ($request as $show)
                     {
-                        echo "<form method='POST' action='./user_experience.php?parcelle=".$parcelle."&experience=".$show['name']."'><button type='submit' name=".$show['name']." class='btn btn-default'>".$show['name']."</button></form>";
+                        echo "<form method='POST' action='./user_experience.php?parcelle=".$parcelle."&experience=".$show['name']."'><button type='submit' class='expgo' name=".$show['name']." class='btn btn-default'>".$show['name']."</button></form>";
                     }
                     ?>
                 </div>
@@ -112,7 +112,5 @@ catch (Exception $e) {
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

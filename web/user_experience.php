@@ -50,13 +50,13 @@ catch (Exception $e) {
         </div>
     </div>
 </nav>
-<h3 id="parce"><?php echo $_SESSION['login']; ?> > <a href="./user_parcelle.php?parcelle=<?php echo $_GET['parcelle'];?>"><?php echo $_GET['parcelle'] . "</a> > " . $_GET['experience'];?></h3>
+<h3 id="parce"><a href="./dashboard.php"><?php echo $_SESSION['login']; ?></a> > <a href="./user_parcelle.php?parcelle=<?php echo $_GET['parcelle'];?>"><?php echo $_GET['parcelle'] . "</a> > " . $_GET['experience'];?></h3>
 
 <br>
 
 <div class="col-md-12">
     <div class="col-md-7">
-        <img src="../img/arton51844.jpg" style="width: 102.8%; height: 100%" />
+        <img src="../img/arton51844.jpg" style="width: 102.8%; height: 600px;" />
     </div>
 
     <div class="col-md-5">
@@ -89,10 +89,17 @@ catch (Exception $e) {
             <br>
             <div class="from">
                 <form id="addTask" style="margin:auto;text-align:center;" class="form-inline" role="form" method="POST" action="./function/user_addtask.php?parcelle=<?php echo $_GET['parcelle'];?>&experience=<?php echo $_GET['experience'];?>">
-                    <div class="form-group">
-                        <label for="name">Nom de la tache :</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
+										<div class="form-group">
+  											<label for="name">Titre de la tache :</label>
+  											<select class="form-control" id="name" name="name">
+    											<option>Protection des cultures</option>
+    											<option>Fertilisation</option>
+    											<option>Alerte</option>
+    											<option>Observation</option>
+    											<option>Semis</option>
+    											<option>Autre</option>
+  											</select>
+										</div>
                     <br>
                     <div class="form-group">
                         <label for="date">Date :</label>
@@ -114,7 +121,20 @@ catch (Exception $e) {
                     $request = $bdd->query("SELECT * FROM task WHERE experience ='".$experience."'");
                     foreach ($request as $show)
                     {
-                        echo "<div id='dd'>". "<h3>" . $show['name']."</h3></p>".$show['date']."</p><br><strong><p>".$show['resume'] . "</p></strong>" . '<img src="../img/plante1.png"/><img src="../img/plante2.png"/><img src="../img/plante3.png"/>'  . "</div>";
+											if ($show['name'] == "Protection des cultures" || $show['name'] == "Fertilisation")
+											{
+                        echo "<div id='dd'><img class='icotask' src='../img/tracteur.png'>". "<h3>" . $show['name']."</h3></p>".$show['date']."</p><br><strong><p>".$show['resume'] . "</p></strong>" . '<img src="../img/plante1.png"/><img src="../img/plante2.png"/><img src="../img/plante3.png"/>'  . "</div>";
+											}
+											
+											else if ($show['name'] == "Alerte")
+											{
+                        echo "<div class='dde'><img class='icotask' src='../img/alerte.png'>". "<h3>" . $show['name']."</h3></p>".$show['date']."</p><br><strong><p>".$show['resume'] . "</p></strong></div>";
+											}
+
+											else if ($show['name'] == "Observation" || $show['name'] == "Semis" || $show['name'] == "Autre")
+											{
+                        echo "<div id='dd'><img class='icotask' src='../img/observation.png'><h3>" . $show['name']."</h3></p>".$show['date']."</p><br><strong><p>".$show['resume'] . "</p></strong><img class='dou' src='../img/turricules.jpg'/></div>";
+											}
                     }
                     ?>
                 </div>
