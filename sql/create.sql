@@ -7,6 +7,7 @@ PRIMARY KEY(id));
 
 CREATE TABLE parcelle (
 id int NOT NULL AUTO_INCREMENT,
+owner varchar(255) NOT NULL,
 name varchar(255) NOT NULL,
 PRIMARY KEY(id));
 

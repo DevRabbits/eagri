@@ -49,7 +49,7 @@
       		</ul>
     		</div>
   		</div>
-		</nav> 
+		</nav>
 		<form style="margin:auto;text-align:center;" class="form-inline" role="form" method="POST" action="./function/user_addparcelle.php">
   		<div class="form-group">
     		<label for="name">Nouvelle Parcelle :</label>
