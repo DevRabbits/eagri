@@ -65,5 +65,27 @@
 
 #addParcelle, #jjj {
     font-size: 22px;
+		height:100px;
 }
 
+.showparce
+{
+		text-align:center;
+}
+
+.showparce *
+{
+		display:inline-block;
+}
+
+.footer
+{
+	height:100px;
+	opacity:0.8;
+	background-color:#000000;
+}
+
+.showtemp
+{
+	text-align:center;
+}

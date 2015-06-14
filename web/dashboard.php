@@ -85,7 +85,7 @@ catch (Exception $e) {
 <div class="col-md-3"></div>
 </div>
 
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 col-md-offset-1 showparce">
     <br>
     <?php
     $owner = $_SESSION['login'];
@@ -99,7 +99,7 @@ catch (Exception $e) {
     <br>
 </div>
 
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-6 col-md-offset-3 showtemp">
     <?php
     include('../lib/forecast.io.php');
 
@@ -158,5 +158,6 @@ catch (Exception $e) {
     echo "\n\nTemperatur 2010-10-10: ". $condition->getMaxTemperature(). "\n";
     ?>
 </div>
+<div class="footer col-md-12"></div>
 </body>
 </html>
