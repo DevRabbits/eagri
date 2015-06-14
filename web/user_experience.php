@@ -40,7 +40,7 @@ catch (Exception $e) {
                 <li><a style="color:black;" href="#">Partenaires</a></li>
                 <li><a style="color:black;"href="#">Stocks</a></li>
             </ul>
-<form class="navbar-form navbar-left" role="search">
+<form action="./search.php" class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Rechercher une experience...">
         </div>
@@ -59,6 +59,9 @@ catch (Exception $e) {
     </div>
 </nav>
 <h3 id="parce"><a href="./dashboard.php"><?php echo $_SESSION['login']; ?></a> > <a href="./user_parcelle.php?parcelle=<?php echo $_GET['parcelle'];?>"><?php echo $_GET['parcelle'] . "</a> > " . $_GET['experience'];?></h3>
+<form id="pushit" class="form-inline" role="form" method="POST" action="./function/user_publish.php?parcelle=<?php echo $_GET['parcelle'];?>&experience=<?php echo $_GET['experience'];?>">
+							<button type="submit" class="btn btn-default">Publier</button>
+            </form>
 
 <br>
 
@@ -71,9 +74,7 @@ catch (Exception $e) {
         <div class="border" id="scrollWindow">
             <div class="titreParcelle">
                 Expérience en cours: <strong><?php echo $_GET['experience']; ?></strong>
-						<form id="pushit" class="form-inline" role="form" method="POST" action="./function/user_publish.php?parcelle=<?php echo $_GET['parcelle'];?>&experience=<?php echo $_GET['experience'];?>">
-							<button type="submit" class="btn btn-default">Publier</button>
-            </form>
+						
             </div>
             <div class="col-md-12" id="ccc">
 

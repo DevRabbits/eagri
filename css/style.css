@@ -9,7 +9,7 @@
     margin-top:100px;
 	height:350px;
     padding-top:25px;
-	border:solid #000000 1px;
+	padding:25px;
 	
 }
 
@@ -144,10 +144,11 @@
 }
 
 #pushit
-{
-	position:absolute;
+{	
 	display:inline-block;
-	margin-left:10px;
+	position:absolute;
+	right:5%;
+	margin-top:-20px;
 }
 
 .publexp
@@ -171,4 +172,18 @@
 .morede
 {
 	display:none;
+}
+
+.search
+{
+	height:950px;
+	text-align:center;
+}
+
+.search img
+{
+	height:100%;
+	width:100%;
+	text-align:center;
+	border:solid black 1px;
 }

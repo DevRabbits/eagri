@@ -40,7 +40,7 @@ catch (Exception $e) {
                 <li><a style="color:black;" href="#">Partenaires</a></li>
                 <li><a style="color:black;"href="#">Stocks</a></li>
             </ul>
-<form class="navbar-form navbar-left" role="search">
+<form action="./search.php" class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Rechercher une experience...">
         </div>

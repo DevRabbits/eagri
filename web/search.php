@@ -40,7 +40,7 @@ catch (Exception $e) {
                 <li><a style="color:black;" href="#">Partenaires</a></li>
                 <li><a style="color:black;"href="#">Stocks</a></li>
             </ul>
-<form action="./search.php" class="navbar-form navbar-left" role="search">
+<form class="navbar-form navbar-left" action="./search.php" role="search" >
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Rechercher une experience...">
         </div>
@@ -59,62 +59,11 @@ catch (Exception $e) {
     </div>
 </nav>
 <br>
-<div class="col-md-10 col-md-offset-1"><h2><strong><?php echo $_SESSION['login']; ?> > Mes Experiences</strong></h2></div>
+<div class="col-md-10 col-md-offset-1"><h2><strong><?php echo $_SESSION['login']; ?> > Recherche</strong></h2></div>
 <br></br>
 <br></br>
-<div class="grey col-md-10 col-md-offset-1"></div>
-
-
-<!--
-<div class="col-md-6 col-md-offset-3" id="ttt">
-
-    <div class="col-md-3 col-md-offset-4">
-        <br>
-        <br>
-        <div class="ee"><h4><strong>Ajouter une Parcelle</strong></h4></div>
-
-        <form id="addParcelle" style="margin:auto;text-align:center;" class="form-inline" role="form" method="POST" action="./function/user_addparcelle.php">
-            <div class="form-group">
-                <label for="name">Nom Parcelle :</label>
-                <input type="text" class="form-control" id="name" name="name">
-            </div>
-            <button type="submit" class="btn btn-default">Ajouter</button>
-        </form>
-        <br></br>
-    </div>
-
-    <div class="col-md-4">
-        <div class="ee">
-        <br>
-        <br>
-        <a href="#"><img id="imageParcelle" src="../img/+.png" /></a>
-        <br>
-        <br>
-        <br>
-            </div>
-    </div>
-<div class="col-md-3"></div>
-</div>
--->
-
-<div class="col-md-10 col-md-offset-1">
-    <br>
-    <?php
-    $owner = $_SESSION['login'];
-    $request = $bdd->query("SELECT * FROM experience WHERE publish ='1'");
-    foreach ($request as $show)
-    {
-			if ($show['name'] == "Colza associe")
-			{
-        echo "<div class='publexp deroulant'><h3><strong>".$show['parcelle'] ." : ".$show['name']."</strong></h3></div>";
-				echo "<div class='morede'><img src='../img/demo.jpg'></div>";
-			}
-			else
-        echo "<div class='publexp'><h3><strong>".$show['parcelle'] ." : ".$show['name']."</strong></h3></div>";
-    }
-    ?>
-    <br>
-    <br>
+<div class="search col-md-10 col-md-offset-1">
+	<img src="../img/search.jpg">
 </div>
 </body>
 </html>

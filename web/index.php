@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 	<head>
 		<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
@@ -20,8 +20,9 @@
 				die('Erreur : ' . $e->getMessage());
 			}
 		?>
+		<img src="../img/carnet.jpg" class="back">
 		<div class="connectdiv col-md-4 col-md-offset-4">
-			<h1><strong>Carnet 47</strong></h1>
+			<h1 style="color:#FFFFFF;"><strong>Carnet 47</strong></h1>
 			<form role="form" method="POST" action="./function/user_connect.php">
 				<div class="form-group">
 					<label for="mail">Adresse E-Mail :</label>
